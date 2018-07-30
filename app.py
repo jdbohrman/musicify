@@ -75,6 +75,7 @@ def _callback():
 @app.route('/mix', methods=['GET'])
 def _mix():
     logger.info('/mix called')
+    # This logic should live in the web app
     if _get_token(request) is None:
         logger.info('No auth cookie found - redirecting to /login')
         return redirect('/login', code=302)
